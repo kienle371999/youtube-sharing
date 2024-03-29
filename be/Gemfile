@@ -45,3 +45,10 @@ group :development do
   # gem "spring"
 end
 
+gem 'video_info'
+
+gem 'rack-cors'
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'

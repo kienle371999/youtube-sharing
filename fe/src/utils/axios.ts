@@ -44,3 +44,14 @@ export const fetcherPost = async (args: string | [string, AxiosRequestConfig]) =
 
   return res.data;
 };
+
+export const fetcherCopy = async (args: string | [string, AxiosRequestConfig]) => {
+  const axiosCopyServices = axios.create({ baseURL: 'http://localhost:3000/' });
+  const [url, config] = Array.isArray(args) ? args : [args];
+
+  const res = await axiosCopyServices.get(url, { ...config });
+
+  console.log('hello ', res);
+
+  return res.data;
+};

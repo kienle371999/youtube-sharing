@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-  web:
-    build: .
-    restart: "no"
-    environment:
-      - DBHOST=postgresql
-      - DBUSER=postgres
-      - DBPASS=password
-    ports:
-      - 3000:3000
-    depends_on:
-      - postgresql
+  # web:
+  #   build: .
+  #   restart: "no"
+  #   environment:
+  #     # - DBHOST=postgresql
+  #     # - DBUSER=postgres
+  #     # - DBPASS=password
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - postgresql
 
   postgresql:
     image: postgres

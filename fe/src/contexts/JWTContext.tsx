@@ -10,9 +10,9 @@ import authReducer from 'contexts/auth-reducer/auth';
 
 // project import
 import Loader from 'components/Loader';
-import axios from 'utils/axios';
 import { KeyedObject } from 'types/root';
 import { AuthProps, JWTContextType } from 'types/auth';
+import axios from 'axios';
 
 const chance = new Chance();
 
@@ -83,9 +83,10 @@ export const JWTProvider = ({ children }: { children: React.ReactElement }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    const response = await axios.post('/api/account/login', { email, password });
-    const { serviceToken, user } = response.data;
-    setSession(serviceToken);
+    const axiosCopy = axios.create({ baseURL: 'http://localhost:3000/' });
+    const response = await axiosCopy.post('/api/user/login', { email, password });
+    const { token, user } = response.data;
+    setSession(token);
     dispatch({
       type: LOGIN,
       payload: {
