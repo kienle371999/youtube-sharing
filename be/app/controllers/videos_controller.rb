@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
-    include JwtAuthentication
-    
+    # include JwtAuthentication
+
     def index
         @videos = Video.all
         render json: @videos

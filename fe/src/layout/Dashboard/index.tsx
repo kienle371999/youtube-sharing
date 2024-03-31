@@ -10,7 +10,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Loader from 'components/Loader';
 import Breadcrumbs from 'components/@extended/Breadcrumbs';
-import AddCustomer from 'sections/apps/customer/AddCustomer';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 import useConfig from 'hooks/useConfig';
@@ -36,7 +35,6 @@ const DashboardLayout = () => {
     if (!miniDrawer) {
       handlerDrawerOpen(!matchDownXL);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matchDownXL]);
 
   if (menuMasterLoading) return <Loader />;
@@ -64,7 +62,6 @@ const DashboardLayout = () => {
             <Footer />
           </Container>
         </Box>
-        <AddCustomer />
       </Box>
     </AuthGuard>
   );
