@@ -5,15 +5,18 @@ import React, { useEffect } from 'react';
 
 import WelcomeBanner from 'sections/dashboard/analytics/WelcomeBanner';
 import YoutubeMessages from 'sections/widget/data/YoutubeMessages';
+import { useSWRConfig } from 'swr';
 
 // ==============================|| DASHBOARD - ANALYTICS ||============================== //
 
 const DashboardAnalytics = () => {
-  const { messages, messagesLoading } = useGetYoutubeMessage();
+  const { messages } = useGetYoutubeMessage();
+  const { mutate } = useSWRConfig();
 
   useEffect(() => {
+    mutate('api/videos');
     console.log('Hello messsages: ', messages);
-  }, [messagesLoading]);
+  }, []);
 
   return (
     <Grid container rowSpacing={4.5} columnSpacing={3}>

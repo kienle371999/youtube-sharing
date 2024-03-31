@@ -51,7 +51,5 @@ export const fetcherCopy = async (args: string | [string, AxiosRequestConfig]) =
 
   const res = await axiosCopyServices.get(url, { ...config });
 
-  console.log('hello ', res);
-
   return res.data;
 };

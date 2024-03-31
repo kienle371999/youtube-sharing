@@ -14,6 +14,8 @@ export function useGetYoutubeMessage() {
     revalidateOnReconnect: false
   });
 
+  console.log('Data', data);
+
   const memoizedValue = useMemo(
     () => ({
       messages: data as YoutubeMessage[],

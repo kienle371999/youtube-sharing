@@ -3,6 +3,7 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import DashboardLayout from 'layout/Dashboard';
+import ShareVideos from 'pages/dashboard/share-videos';
 
 // render - dashboard
 const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
@@ -24,6 +25,10 @@ const MainRoutes = {
               element: <DashboardAnalytics />
             }
           ]
+        },
+        {
+          path: 'videos',
+          element: <ShareVideos />
         }
       ]
     }
